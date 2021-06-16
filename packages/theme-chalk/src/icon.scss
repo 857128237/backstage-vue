@@ -1,0 +1,12 @@
+@include b(icon) {
+    color: $--color-black;
+    &.iconfont {
+        font-size: 16px;
+    }
+    @include m(large) {
+        font-size: 18px;
+    }
+    @include m(small) {
+        font-size: 14px;
+    }
+}

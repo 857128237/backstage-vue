@@ -1,0 +1,103 @@
+@include b(alert) {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    @include button-size(8px, 16px, 'auto', $--color-info, $--font-size, 'none', $--border-radius, mix($--color-white, $--color-info, 90%));
+    @include m(showIcon) {
+        padding-left: 38px;
+    }
+    @include m(closable) {
+        padding-right: 50px;
+    }
+    @include m(success) {
+        color: $--color-success;
+        background: mix($--color-white, $--color-success, 90%);
+        &.bs-alert--dark {
+            background: $--color-success;
+            @include b(alert-icon) {
+                color: $--color-success;
+            }
+        }
+    }
+    @include m(warning) {
+        color: $--color-warning;
+        background: mix($--color-white, $--color-warning, 90%);
+        &.bs-alert--dark {
+            background: $--color-warning;
+            @include b(alert-icon) {
+                color: $--color-warning;
+            }
+        }
+    }
+    @include m(error) {
+        color: $--color-danger;
+        background: mix($--color-white, $--color-danger, 90%);
+        &.bs-alert--dark {
+            background: $--color-danger;
+            @include b(alert-icon) {
+                color: $--color-danger;
+            }
+        }
+    }
+    @include m(transition) {
+        transition: 0.5s;
+    }
+    @include b(alert-title) {
+        display: block;
+    }
+    @include b(alert-icon) {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $--icon-color;
+        color: $--color-white;
+        .iconfont{
+            font-size: 12px;
+        }
+    }
+    @include b(alert-icon--success) {
+        background: $--color-success;
+    }
+    @include b(alert-icon--warning) {
+        background: $--color-warning;
+    }
+    @include b(alert-icon--error) {
+        background: $--color-danger;
+    }
+    @include b(alert-closebtn) {
+        position: absolute;
+        right: 12px;
+        top: 9px;
+        cursor: pointer;
+        font-size: 16px;
+        color: $--icon-color;
+        &:hover {
+            color: $--color-black;
+        }
+    }
+    @include b(alert-closeText){
+        font-size: 12px;
+    }
+
+    @include m(dark) {
+        color: $--color-white;
+        &.bs-alert--info {
+            background: $--color-info;
+            @include b(alert-icon) {
+                color: $--color-info;
+            }
+        }
+        @include b(alert-icon) {
+            background: $--color-white;
+        }
+        @include b(alert-closebtn) {
+            color: $--color-white;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@mixin utils-user-select($value) {
+    -moz-user-select: $value;
+    -webkit-user-select: $value;
+    -ms-user-select: $value;
+}
+
+@mixin button-disabled {
+    color: rgba(0, 0, 0, .25) !important;
+    background: #f5f5f5 !important;
+    border-color: #d9d9d9 !important;
+    text-shadow: none;
+    box-shadow: none;
+    cursor: not-allowed !important;
+    &:hover,
+    &:focus {
+        color: rgba(0, 0, 0, .25);
+        background: #f5f5f5;
+        border-color: #d9d9d9;
+    }
+}
+
+@mixin button-hover-focus-active($value) {
+    &:hover,
+    &:focus {
+        color: lighten($value, 10%);
+    }
+    &:active{
+        color: darken($value, 10%);
+    }
+}
+
+@mixin transition-second($value) {
+    transition: $value;
+}
+
+@mixin button-size($padding-vertical, $padding-horizontal, $height, $color, $font-size, $border, $border-radius, $background-color) {
+    box-sizing: border-box;
+    transition: 0.1s;
+    padding: $padding-vertical $padding-horizontal;
+    height: $height;
+    color: $color;
+    font-size: $font-size;
+    border: $border;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+@mixin button-variant($color, $background-color) {
+    color: $color;
+    background-color: $background-color;
+    border-color: $background-color;
+    &:hover,
+    &:focus {
+      background: lighten($background-color, 10%);
+      border-color: lighten($background-color, 10%);
+      color: $color;
+    }
+    
+    &:active {
+        background: darken($background-color, 10%);
+        border-color: darken($background-color, 10%);
+        color: $color;
+    }
+}

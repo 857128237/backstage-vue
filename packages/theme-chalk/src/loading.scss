@@ -1,0 +1,32 @@
+.b-loading-parent--position{
+    position: relative;
+}
+.b-loading-parent--overflow{
+    overflow: hidden !important;
+}
+@include b(loading-mark) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all .5s;
+    z-index: 2000;
+    background-color: $--background-hsla;
+    @include b(loading-spinning) {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @include b(loading-text) {
+        margin: 4px 0;
+        font-size: $--font-size;
+        color: $--color-primary;
+    }
+    .iconfont {
+        font-size: 30px;
+        color: $--color-primary;
+    }
+}

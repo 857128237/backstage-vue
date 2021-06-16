@@ -1,0 +1,211 @@
+@include b(button) {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-align: center;
+    outline: none;
+    margin: 0;
+    @include utils-user-select(none);
+    @include button-size(0, $--button-padding-horizontal, $--button-height, $--color-black, $--font-size, $--border-line1, $--border-radius, $--color-white);
+    & > .iconfont + span{
+        padding-left: 5px;
+    }
+    &:hover,
+    &:focus {
+      background: $--color-white;
+      border-color: $--color-primary-lighten;
+      color: $--color-primary-lighten;
+    }
+    &:active {
+      background: $--color-white;
+      border-color: $--color-primary-darken;
+      color: $--color-primary-darken;
+    }
+    @include m(large) {
+        padding: 0 $--button-large-padding-horizontal;
+        height: $--button-large-height;
+    }
+    @include m(small) {
+        padding: 0 $--button-small-padding-horizontal;
+        height: $--button-small-height;
+    }
+    @include m(primary) {
+        @include button-variant($--color-white, $--color-primary);
+    }
+    @include m(success) {
+        @include button-variant($--color-white, $--color-success);
+    }
+    @include m(warning) {
+        @include button-variant($--color-white, $--color-warning);
+    }
+    @include m(danger) {
+        @include button-variant($--color-white, $--color-danger);
+    }
+    @include m(info) {
+        @include button-variant($--color-white, $--color-info);
+    }
+    @include m(dashed) {
+        border-style: dashed;
+    }
+    @include m(link) {
+        background: transparent;
+        border-color: transparent;
+        color: $--color-primary;
+        padding: 0;
+        &:hover,
+        &:focus {
+            color: $--color-primary-lighten;
+            border-color: transparent;
+            background-color: transparent;
+        }
+        &:active {
+            color: $--color-primary-darken;
+            border-color: transparent;
+            background-color: transparent;
+        }
+        &[disabled],
+        &[disabled]:hover,
+        &[disabled]:focus{
+            border-color: transparent;
+            background: transparent;
+        }
+    }
+    @include m(ghost) {
+        background: transparent;
+        &:hover,
+        &:focus {
+            background: transparent;
+        }
+        &:active{
+            background: transparent;
+        }
+        &.bs-button--primary{
+            color: $--color-primary;
+            @include button-hover-focus-active($--color-primary);
+        }
+        &.bs-button--success{
+            color: $--color-success;
+            @include button-hover-focus-active($--color-success);
+        }
+        &.bs-button--warning{
+            color: $--color-warning;
+            @include button-hover-focus-active($--color-warning);
+        }
+        &.bs-button--danger{
+            color: $--color-danger;
+            @include button-hover-focus-active($--color-danger);
+        }
+    }
+    @include m(circle) {
+        min-width: 32px;
+        border-radius: 50%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @include m(block) {
+        width: 100%;
+    }
+    @include m(round) {
+        width: auto;
+        border-radius: 32px;
+    }
+    @include m(plain) {
+        &.bs-button--primary {
+            background: lighten($--color-primary, 40%);
+            color: $--color-primary;
+            border-color: lighten($--color-primary, 20%);
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background: $--color-primary;
+                color: $--color-white;
+            }
+            &:active {
+                background: darken($--color-primary, 10%);
+            }
+        }
+        &.bs-button--success {
+            background: lighten($--color-success, 50%);
+            color: $--color-success;
+            border-color: lighten($--color-success, 20%);
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background: $--color-success;
+                color: $--color-white;
+            }
+            &:active {
+                background: darken($--color-success, 10%);
+            }
+        }
+        &.bs-button--warning {
+            background: lighten($--color-warning, 42%);
+            color: $--color-warning;
+            border-color: lighten($--color-warning, 20%);
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background: $--color-warning;
+                color: $--color-white;
+            }
+            &:active {
+                background: darken($--color-warning, 10%);
+            }
+        }
+        &.bs-button--danger {
+            background: lighten($--color-danger, 32%);
+            color: $--color-danger;
+            border-color: lighten($--color-danger, 20%);
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background: $--color-danger;
+                color: $--color-white;
+            }
+            &:active {
+                background: darken($--color-danger, 10%);
+            }
+        }
+        &.bs-button--info {
+            background: lighten($--color-info, 36%);
+            color: $--color-info;
+            &:hover,
+            &:focus {
+                border-color: transparent;
+                background: $--color-info;
+                color: $--color-white;
+            }
+            &:active {
+                background: darken($--color-info, 10%);
+            }
+        }
+    }
+    @include m(loading) {
+        pointer-events: none;
+        &.bs-button--primary {
+            background: lighten($--color-primary, 16%);
+            border-color: lighten($--color-primary, 16%);
+        }
+        &.bs-button--success {
+            background: lighten($--color-success, 16%);
+            border-color: lighten($--color-success, 16%);
+        }
+        &.bs-button--warning {
+            background: lighten($--color-warning, 16%);
+            border-color: lighten($--color-warning, 16%);
+        }
+        &.bs-button--danger {
+            background: lighten($--color-danger, 16%);
+            border-color: lighten($--color-danger, 16%);
+        }
+        &.bs-button--info {
+            background: lighten($--color-info, 16%);
+            border-color: lighten($--color-info, 16%);
+        }
+    }
+    @include m(disabled) {
+        @include button-disabled;
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "vue-teamwedo",
+  "description": "An backstage UI components based Vue.",
+  "version": "0.0.0",
+  "author": "吴振东 <857128237@qq.com>",
+  "license": "MIT",
+  "private": false,
+  "main": "lib/backstage-vue.common.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lib": "vue-cli-service build --target lib --name backstage-vue --dest lib packages/index.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.5.11",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "vue-template-compiler": "^2.6.11",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

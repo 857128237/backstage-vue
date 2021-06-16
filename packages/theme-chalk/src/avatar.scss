@@ -1,0 +1,52 @@
+@include b(avatar) {
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: $--avatar-default-size;
+    line-height: $--avatar-default-size;
+    @include button-size(0, 0, $--avatar-default-size, $--color-white, $--avatar-default-font-size, 'none', $--border-radius, $--avatar-background-color);
+  
+    & > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+  
+    & > i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @include m(circle) {
+      border-radius: 50%;
+    }
+  
+    @include m(square) {
+        border-radius: $--border-radius;
+    }
+  
+    @include m(large) {
+      width: $--avatar-large-size;
+      height: $--avatar-large-size;
+      line-height: $--avatar-large-size;
+      & > .iconfont {
+        font-size: $--avatar-large-font-size;
+      }
+    }
+  
+    @include m(small) {
+      width: $--avatar-small-size;
+      height: $--avatar-small-size;
+      line-height: $--avatar-small-size;
+      & > .iconfont {
+        font-size: $--avatar-small-font-size;
+      }
+    }
+  }
+  

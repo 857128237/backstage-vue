@@ -1,0 +1,92 @@
+@import 'fonts/icon.scss';
+
+body, html{
+    margin: 0;
+    padding: 0;
+}
+$--color-primary: #1890ff !default;
+$--color-primary-lighten: lighten($--color-primary, 10%);
+$--color-primary-darken: darken($--color-primary, 10%);
+$--color-white: #FFFFFF !default;
+$--color-black: rgba(0, 0, 0, .65) !default;
+
+$--color-success: #52c41A !default;
+$--color-warning: #FAAD14 !default;
+$--color-danger: #FF4D4F !default;
+$--color-info: #909399 !default;
+
+$--button-height: 32px;
+$--button-large-height: 40px;
+$--button-small-height: 26px;
+
+$--background-hsla: hsla(0, 0%, 100%, .8);
+
+/* fontSize
+---------------------*/
+$--font-size: 14px !default;
+$--large-font-size: 16px !default;
+$--small-font-size: 12px !default;
+
+/* border
+---------------------*/
+$--border-color: #d9d9d9 !default;
+$--border-line1: 1px solid $--border-color !default;
+$--border-dashed-line1: 1px dashed $--border-color !default;
+
+
+/* borderRadius
+---------------------*/
+$--border-radius: 4px !default;
+$--border-large-radius: 8px !default;
+
+/* transition
+---------------------*/
+$--transition-second: .1s;
+
+/* transparency
+---------------------*/
+$--button-hover-tint-percent: 20% !default;
+$--button-active-shade-percent: 10% !default;
+
+/* button-padding
+---------------------*/
+$--button-padding-vertical: 8px !default;
+$--button-padding-horizontal: 15px !default;
+$--button-large-padding-vertical: 10px !default;
+$--button-large-padding-horizontal: 15px !default;
+$--button-small-padding-vertical: 4px !default;
+$--button-small-padding-horizontal: 7px !default;
+
+/* avatar
+--------------------------*/
+$--avatar-background-color: #C0C4CC !default;
+$--avatar-default-size: 32px !default;
+$--avatar-large-size: 40px !default;
+$--avatar-small-size: 24px !default;
+$--avatar-default-font-size: 18px !default;
+$--avatar-large-font-size: 24px !default;
+$--avatar-small-font-size: 14px !default;
+
+/* icon
+--------------------------*/
+$--icon-color: #C0C4CC !default;
+
+/* divider
+--------------------------*/
+$--divider-color: #dcdfe6 !default;
+
+/* anamition
+--------------------------*/
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.slide-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-enter, .slide-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
+}
